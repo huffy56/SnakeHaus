@@ -1,0 +1,64 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+        <ion-back-button defaultHref="tabs/parks"></ion-back-button>
+    </ion-buttons>    
+    <ion-title>{{reptileInfo.SnakeName}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <!-- I need to switch the picture out to match the snake -->
+  <ion-grid>
+    <ion-row *ngIf="reptileInfo.Picture != null"><img src='{{reptile.Info.Picture}}'></ion-row>
+  </ion-grid>
+  <ion-grid>
+    <ion-row *ngIf="reptileInfo.Picture == null"><img src='../../assets/img/SnakeHausLogo.png'></ion-row>
+  </ion-grid>
+  
+  <h1 padding >{{reptileInfo.SnakeName}}</h1>
+  <ion-card>
+    <ion-card-header>
+      {{reptileInfo.SnakeName}}
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item (click)="this.basicInfo = !this.basicInfo">
+        <h2>Basic Information</h2>
+      </ion-item>
+      <ion-item *ngIf="basicInfo" id="InfoSort">
+        <ion-grid>
+          <ion-row *ngIf="reptileInfo.SnakeName != null"><h2>Name:</h2><p>{{reptileInfo.SnakeName}}</p></ion-row>
+          <ion-row *ngIf="reptileInfo.Species != null"><h2>Species:</h2><p>{{reptileInfo.Species}}</p></ion-row>
+          <ion-row *ngIf="reptileInfo.Morph != null"><h2>Morph: </h2> <p>{{reptileInfo.Morph}}</p></ion-row>
+          <ion-row *ngIf="reptileInfo.BirhtDay != null"><h2>DoB: </h2> <p>{{reptileInfo.BirhtDay}}</p></ion-row>
+          <ion-row *ngIf="reptileInfo.Handling != null"><h2>Handling: </h2> <p>{{reptileInfo.Handling}}</p></ion-row>
+          <ion-row *ngIf="reptileInfo.Aquired != null"><h2>Aquired: </h2> <p>{{reptileInfo.Aquired}}</p></ion-row>
+          <ion-row *ngIf="reptileInfo.ScaleVentral != null"><h2>Scale Ventral: </h2> <p>{{reptileInfo.ScaleVentral}}</p></ion-row>
+          <ion-row *ngIf="reptileInfo.ScaleMid != null"><h2>ScaleMid: </h2> <p>{{reptileInfo.ScaleMid}}</p></ion-row>
+          <ion-row *ngIf="reptileInfo.ScaleSubCauudal != null"><h2>ScaleSubCauudal: </h2> <p>{{reptileInfo.ScaleSubCauudal}}</p></ion-row>
+          <ion-row *ngIf="reptileInfo.Saddles != null"><h2>Saddles: </h2> <p>{{reptileInfo.Saddles}}</p></ion-row>
+          <ion-row *ngIf="reptileInfo.ScaleCount5 != null"><h2>ScaleCount5: </h2> <p>{{reptileInfo.ScaleCount5}}</p></ion-row>
+        </ion-grid>
+      </ion-item>
+      <!-- <ion-item (click)="this.observations = !this.observations">
+        <h2>Observations</h2>
+      </ion-item> -->
+      <!-- <ion-item *ngIf="observations">
+        <ul *ngIf="observations">
+          <li>Name: {{reptileInfo.vendor_address1}}</li>
+          <li>Date: {{reptileInfo.vendor_address2}}</li>
+          <li>Observation: </li>
+        </ul>
+      </ion-item> -->
+      <ion-item (click)="this.feed = !this.feed">
+        <h2>Feed</h2>
+      </ion-item>
+      <ion-item *ngIf="feed" id="InfoSort">
+        <ion-grid>
+          <ion-row *ngIf="feedInfo.Food != null"><h2>Food:</h2><p>{{feedInfo.Food}}</p></ion-row>
+          <ion-row *ngIf="feedInfo.Frequency != null"><h2>Frequency:</h2><p>{{feedInfo.Frequency}}</p></ion-row>
+        </ion-grid>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

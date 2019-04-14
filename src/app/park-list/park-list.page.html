@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar color='primary'>
+    <ion-title>Reptiles</ion-title>
+  </ion-toolbar>
+  <ion-toolbar color='primary'>
+    <ion-searchbar [(ngModel)]="searchQuery" (ionInput)="getReptiles($event)" (ionClear)="resetList($event)">
+    </ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-virtual-scroll [items]="reptiles" [headerFn]="customHeaderFn">
+      <ion-item-divider *virtualHeader='let header'>
+        {{header}}
+      </ion-item-divider>
+      <ion-item *virtualItem="let snake" (click)="goReptileDetails(snake)" detail-push>
+        <ion-thumbnail slot="start" *ngIf='snake.Picture != null'>
+          <ion-img src="snake.Picture"></ion-img>
+        </ion-thumbnail>
+        <ion-thumbnail slot="start" *ngIf='snake.Picture == null'>
+          <ion-img src="../assets/img/SnakeHausLogo.png"></ion-img>
+        </ion-thumbnail>
+        <ul class="clear">
+          <li class="clear"><h2>{{snake.SnakeName}}</h2></li>
+          <li class="clear"><p>{{snake.Species}}</p></li>
+        </ul>
+          
+          
+      </ion-item>
+      </ion-virtual-scroll>
+  </ion-list>
+
+</ion-content>
