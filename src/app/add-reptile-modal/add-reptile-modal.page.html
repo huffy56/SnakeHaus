@@ -6,96 +6,110 @@
 </ion-header>
   
   <ion-content padding>
-    <form (ngSubmit)="logForm()">
+    <form>
       <h2>Basic Information</h2>
       <ion-item>
-        <ion-label>ID: </ion-label>
-        <ion-input type="text" name="title"></ion-input>
+        <ion-label>Name: </ion-label>
+        <ion-input type="text" name="name"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-label>Name: </ion-label>
-        <ion-input type="text" name="title"></ion-input>
+        <ion-label>Location: </ion-label>
+        <ion-input type="text" name="location"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label>Species: </ion-label>
-        <ion-input type="text" name="title"></ion-input>
+        <ion-input type="text" name="species"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label>Morph:</ion-label>
-        <ion-input type="text" name="title"></ion-input>
+        <ion-input type="text" name="morph"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label>DoB:</ion-label>
-        <ion-input type="text" name="title"></ion-input>
+        <ion-input type="date" name="DoB"></ion-input>
       </ion-item>
       <ion-item>
           <ion-label>Food:</ion-label>
-          <ion-input type="text" name="title"></ion-input>
+          <ion-input type="text" name="food"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label>Handling:</ion-label>
-        <ion-input type="text" name="title"></ion-input>
+        <ion-input type="text" name="handling"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label>Acquired:</ion-label>
-        <ion-input type="text" name="title"></ion-input>
+        <ion-input type="date" name="acquired"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-label>ScaleVentral:</ion-label>
-        <ion-input type="text" name="title"></ion-input>
+        <ion-label>Scale Ventral:</ion-label>
+        <ion-input type="text" name="scaleVentral"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-label>ScaleMid:</ion-label>
-        <ion-input type="text" name="title"></ion-input>
+        <ion-label>Scale Mid:</ion-label>
+        <ion-input type="text" name="scaleMid"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-label>ScaleSubCaudal:</ion-label>
-        <ion-input type="text" name="title"></ion-input>
+        <ion-label>Scale Sub Cauudal:</ion-label>
+        <ion-input type="text" name="scaleSubCauudal"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label>Saddles:</ion-label>
-        <ion-input type="text" name="title"></ion-input>
+        <ion-input type="text" name="saddles"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-label>ScaleCount5:</ion-label>
-        <ion-input type="text" name="title"></ion-input>
+        <ion-label>Scale Count 5:</ion-label>
+        <ion-input type="text" name="scaleCount5"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Picture: </ion-label>
+        <ion-input type="image" name="picture"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Active:</ion-label>
+        <ion-input type="text" name="active"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Adopter:</ion-label>
+        <ion-input type="text" name="adopter"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Adoption Date:</ion-label>
+        <ion-input type="date" name="adoptionDate"></ion-input>
       </ion-item>
 
       <h2>Observations</h2>
       <ion-item>
-        <ion-label>Name: </ion-label>
-        <ion-input type="text" name="title"></ion-input>
-      </ion-item>
-      <ion-item>
         <ion-label>Date: </ion-label>
-        <ion-input type="text" name="title"></ion-input>
+        <ion-input type="date" name="obDate"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label>Observation: </ion-label>
-        <ion-input type="text" name="title"></ion-input>
+        <ion-input type="text" name="obData"></ion-input>
       </ion-item>
 
       <h2>Feeding</h2>
       <ion-item>
-        <ion-label>Name: </ion-label>
-        <ion-input type="text" name="title"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label>Food Size: </ion-label>
-        <ion-input type="text" name="title"></ion-input>
+        <ion-label>Food: </ion-label>
+        <ion-input type="text" name="feedFood"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label>Frequency: </ion-label>
         <ion-input type="text" name="title"></ion-input>
       </ion-item>
+
+      <h2>Feeding Schedule</h2>
       <ion-item>
         <ion-label>Date: </ion-label>
-        <ion-input type="text" name="title"></ion-input>
+        <ion-input type="date" name="schedDate"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-label>Ate: </ion-label>
-        <ion-input type="text" name="title"></ion-input>
+        <ion-label>Food: </ion-label>
+        <ion-input type="text" name="schedFood"></ion-input>
       </ion-item>
-      <ion-button type="submit"><ion-label>Submit</ion-label></ion-button>
+      <ion-item>
+        <ion-label>Comment: </ion-label>
+        <ion-input type="text" name="schedComment"></ion-input>
+      </ion-item>
     </form>
+    <ion-button type="submit" (click)="sendForm()"><ion-label>Submit</ion-label></ion-button>
   </ion-content>
