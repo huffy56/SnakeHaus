@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Settings</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content padding>
+  <img src = "../../assets/img/SnakeHausLogo.png">
+  <ion-card>
+    <ion-card-header>
+      Reptile Inforamtion
+    </ion-card-header>
+    <ion-card-content>
+
+      <ion-item (click)="this.reptileInfo = !this.reptileInfo">
+        <h2>Reptiles</h2>
+      </ion-item>
+      <ion-item *ngIf="reptileInfo">
+        <ul>
+          <li (click)="presentAddReptileModal()"><h2>Add a Reptile</h2></li>
+          <li (click)="presentUpdateReptileModal()"><h2>Update a Reptile</h2></li>
+        </ul>
+      </ion-item>
+
+      <ion-item (click)="this.reptileFeed = !this.reptileFeed">
+        <h2>Feeding</h2>
+      </ion-item>
+      <ion-item *ngIf="reptileFeed == !reptilesFeed">
+        <ul>
+          <li><h2>Content is blank so far</h2></li>
+        </ul>
+      </ion-item>
+      <ion-item (click)="this.reptilesUpdate = !this.reptilesUpdate">
+        <h2>Update a Reptile</h2>
+      </ion-item>
+      <ion-item *ngIf="reptilesUpdate == !reptilesUpdate">
+        <ul>
+          <li><h2>Add a Reptile</h2></li>
+          <li><h2>Remove a Reptile</h2></li>
+          <li><h2>Update a Reptile</h2></li>
+        </ul>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
